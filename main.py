@@ -36,7 +36,7 @@ async def on_message(message):
         replyMessage = random.choice(quotes)
         # Some quotes use the author's name
         if "{}" in replyMessage:
-            replyMessage.format(message.author)
+            replyMessage = replyMessage.format(message.author.name)
         await message.reply(replyMessage)
 
 
